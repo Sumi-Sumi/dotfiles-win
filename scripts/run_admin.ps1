@@ -100,6 +100,8 @@ Install-Module -Scope CurrentUser PSFzf
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitconfig -Value $DOTCONFIG\git\config
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitignore -Value $DOTNIXCONFIG\common\git\gitignore
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitmessage -Value $DOTNIXCONFIG\common\git\gitmessage
+# wezterm
+New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.config\wezterm -Value $DOTNIXCONFIG\desktop\terminal\wezterm
 # New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.bashrc -Value $DOTFILES\.bashrc.windows
 
 # ruby
