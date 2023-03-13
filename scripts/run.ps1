@@ -121,8 +121,15 @@ else {
 }
 
 if ($isVM){
-  Add-AppxPackage -Path https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx
-  Add-AppxPackage -Path https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+  @(
+    "https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx",
+    "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+  )|foreach-object{
+  [System.IO.Path]::GetTempFileName() | Tee  -Variable TempFile
+  iwr -useb $_ -OutFile $TempFile
+  Add-AppxPackage $TempFile
+  del $TempFile
+  }
 }
 else {
   wsl --install -d ubuntu
