@@ -47,9 +47,9 @@ if ($oldPath -ne $newPath) {
   [System.Environment]::SetEnvironmentVariable("_PATH_" + (Get-Date -UFormat "%Y%m%d"), $oldPath, "User")
 }
 [System.Environment]::SetEnvironmentVariable("PATH", $newPath, "User")
-$env:PATH = $newPath + ";" + $env:PATH #}}}
+$env:PATH = $newPath + ";" + $env:PATH 
 
-#{{{ scoop
+ scoop
 $ErrorActionPreference = "Stop"
 
 try {
@@ -92,10 +92,10 @@ scoop bucket add java
 scoop update *
 scoop install $PACKAGES
 # scoop update --force "vscode-insiders"
-scoop reset microsoft-lts-jdk#}}}
+scoop reset microsoft-lts-jdk
 
-wsl --install -d ubuntu#{{{
-wsl --update#}}}
+wsl --install -d ubuntu
+wsl --update
 
 if (Test-Path ("$DOTFILES")) {
   Set-Location $DOTFILES
