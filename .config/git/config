@@ -1,0 +1,15 @@
+[commit]
+	template = "~/.config/git/message"
+
+[core]
+	pager = "delta"
+
+[init]
+	defaultBranch = "main"
+
+[interactive]
+	diffFilter = "delta --color-only"
+
+[user]
+	email = "dragon511southern@gmail.com"
+	name = "Sumi-Sumi"
