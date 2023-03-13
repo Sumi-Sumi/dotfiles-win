@@ -49,7 +49,22 @@ if ($oldPath -ne $newPath) {
 [System.Environment]::SetEnvironmentVariable("PATH", $newPath, "User")
 $env:PATH = $newPath + ";" + $env:PATH 
 
- scoop
+switch ((Get-WmiObject -Class Win32_ComputerSystem).Model) {
+  "Virtual Machine" {
+    $isVM = $true
+  }
+  "VMware Virtual Platform" {
+    $isVM = $true
+  }
+  "VirtualBox" {
+    $isVM = $true
+  }
+  default {
+    $isVM = $false
+  }
+}
+
+# scoop
 $ErrorActionPreference = "Stop"
 
 try {
@@ -94,9 +109,6 @@ scoop install $PACKAGES
 # scoop update --force "vscode-insiders"
 scoop reset microsoft-lts-jdk
 
-wsl --install -d ubuntu
-wsl --update
-
 if (Test-Path ("$DOTFILES")) {
   Set-Location $DOTFILES
   git pull
@@ -106,6 +118,15 @@ else {
   git clone $dotfiles-win $env:USERPROFILE\.dotfiles
   # Set-Location $DOTFILES
   # git remote set-url origin git@gitlab.com:kentac55/.dotfiles.git
+}
+
+if ($isVM){
+  Add-AppxPackage -Path https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx
+  Add-AppxPackage -Path https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+}
+else {
+  wsl --install -d ubuntu
+  wsl --update
 }
 
 winget --import $DOTFILES\winget.json
