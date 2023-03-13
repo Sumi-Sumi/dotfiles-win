@@ -121,11 +121,12 @@ else {
 }
 
 if ($isVM){
-  [System.IO.Path]::GetTempFileName() | Tee  -Variable TempFile
-  iwr -Uri "https://www.nuget.org/api/v2/package/Microsoft.UI.Xaml/2.7.3" -OutFile $TempFile
-  Expand-Archive $TempFile
-  Add-AppxPackage $TempFile\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.7.appx
-  del $TempFile
+  iwr -Uri "https://www.nuget.org/api/v2/package/Microsoft.UI.Xaml/2.7.3" -OutFile "$env:TEMP/ms_ui_xaml.zip"
+  New-Item $env:TEMP/ms_ui_xaml -Force -ItemType Directory
+  Expand-Archive "$env:TEMP/ms_ui_xaml.zip" -DestinationPath "$env:TEMP/ms_ui_xaml"
+  Add-AppxPackage $env:TEMP/ms_ui_xaml/tools/AppX/x64/Release/Microsoft.UI.Xaml.2.7.appx
+  del $env:TEMP/ms_ui_xaml.zip
+  del $env:TEMP\ms_ui_xaml
   @(
     "https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx",
     "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
