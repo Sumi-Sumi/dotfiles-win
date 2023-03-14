@@ -116,9 +116,7 @@ if (Test-Path ("$DOTFILES")) {
 }
 else {
   git config --global core.autoCRLF false
-  git clone $dotfiles-win $env:USERPROFILE\.dotfiles
-  # Set-Location $DOTFILES
-  # git remote set-url origin git@gitlab.com:kentac55/.dotfiles.git
+  git clone $DOTFILES_GITURL $env:USERPROFILE\.dotfiles
 }
 
 if ($isVM){
@@ -186,7 +184,7 @@ foreach ($PIPXPACKAGE in $PIPXPACKAGES) {
   pipx install --force $PIPXPACKAGE
 }
 pipx upgrade-all
-(Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -UseBasicParsing).Content | python
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
 
 # ruby
 $GEMPACKAGES = @(
