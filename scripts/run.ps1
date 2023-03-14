@@ -172,9 +172,8 @@ $PIP3PACKAGES = @(
   "pynvim"
 )
 foreach ($PIP3PACKAGE in $PIP3PACKAGES) {
-  pipx install --force $PIP3PACKAGES
+  pip install $PIP3PACKAGE
 }
-pip install $PIP3PACKAGES
 
 $PIPXPACKAGES = @(
   # "docker-compose" Docker Desktopについてくる
