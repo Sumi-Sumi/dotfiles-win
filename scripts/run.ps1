@@ -99,6 +99,7 @@ $PACKAGES = @(
   "ruby"
   "rustup"
   "starship"
+  "tree-sitter"
 )
 scoop install $UTILS
 scoop bucket add versions
@@ -126,7 +127,7 @@ if ($isVM){
   Expand-Archive "$env:TEMP/ms_ui_xaml.zip" -DestinationPath "$env:TEMP/ms_ui_xaml"
   Add-AppxPackage $env:TEMP/ms_ui_xaml/tools/AppX/x64/Release/Microsoft.UI.Xaml.2.7.appx
   del $env:TEMP/ms_ui_xaml.zip
-  del $env:TEMP\ms_ui_xaml
+  del -Recurse $env:TEMP/ms_ui_xaml
   @(
     "https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx",
     "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
@@ -165,12 +166,15 @@ $env:PYTHONUSERBASE = "$env:USERPROFILE"
 # pythonはscoopで入れるので`--user`をつける必要がない
 
 # python3
+python -m pip install --upgrade pip
 $PIP3PACKAGES = @(
-  "pip"
   "pipx"
   "pynvim"
 )
-python -m pip install --upgrade $PIP3PACKAGES
+foreach ($PIP3PACKAGE in $PIP3PACKAGES) {
+  pipx install --force $PIP3PACKAGES
+}
+pip install $PIP3PACKAGES
 
 $PIPXPACKAGES = @(
   # "docker-compose" Docker Desktopについてくる
@@ -202,82 +206,31 @@ npm install -g $NPMPACKAGES
 # golang
 $env:GO111MODULE = "on"
 $env:GOPATH = $env:USERPROFILE
-$GOPACKAGES = @(
-  "golang.org/x/tools/cmd/goimports"
-  "golang.org/x/tools/cmd/gopls"
-  "github.com/golangci/golangci-lint/cmd/golangci-lint@v1.14.1"
-  "github.com/boyter/scc"
-)
-Set-Location $env:USERPROFILE
-foreach ($GOPACKAGE in $GOPACKAGES) {
-  go get -u $GOPACKAGE
-}
-
-ghq get -u github.com/saibing/tools
-Set-Location $env:USERPROFILE/src/github.com/saibing/tools/gopls
-go install
-Set-Location $DOTFILES
-
-ghq get -u github.com/kentac55/memo
-Set-Location $env:USERPROFILE/src/github.com/kentac55/memo
-git checkout modk
-go install
-Set-Location $DOTFILES
-
-# install code extensions
-$CODES = @()
-if (Get-Command * | Where-Object { $_.Name -match "^Code.exe$" }) {
-  $CODES += "code"
-}
-if (Get-Command * | Where-Object { $_.Name -match "code-insiders" }) {
-  $CODES += "code-insiders"
-}
-
-foreach ($CODE in $CODES) {
-  foreach ($line in Get-Content $DOTFILES\.config\Code\extensions) {
-    Invoke-Expression "$CODE --install-extension $line --force"
-  }
-  # uninstall code extensions
-  foreach ($line in Get-Content $DOTFILES\.config\Code\x_extensions) {
-    Invoke-Expression "$CODE --uninstall-extension $line --force"
-  }
-}
-
-ridk install 1, 2, 3
-
-# gitconfig for windows
-if (!(Test-Path -Path $env:USERPROFILE\.gitconfig.local)) {
-  New-Item -Path $env:USERPROFILE\.gitconfig.local
-}
-
-# ghq
-New-Item $env:USERPROFILE\src -Force -ItemType Directory
+# $GOPACKAGES = @(
+#   "golang.org/x/tools/cmd/goimports"
+#   "golang.org/x/tools/cmd/gopls"
+#   "github.com/golangci/golangci-lint/cmd/golangci-lint@v1.14.1"
+#   "github.com/boyter/scc"
+# )
+# Set-Location $env:USERPROFILE
+# foreach ($GOPACKAGE in $GOPACKAGES) {
+#   go get -u $GOPACKAGE
+# }
 
 # deprecated
-$deprecated_files = @(
-  "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\profiles.json"
-)
-foreach ($deprecated_file in $deprecated_files) {
-  if (Test-Path -PathType Leaf $deprecated_file) {
-    Remove-Item -Force $deprecated_file
-  }
-}
-$deprecated_dirs = @(
-  "$env:APPDATA\Hyper"
-)
-foreach ($deprecated_dir in $deprecated_dirs) {
-  if (Test-Path -PathType Container $deprecated_dir) {
-    Remove-Item -Force -Recurse $deprecated_dir
-  }
-}
-
-$env:COURSIER_BIN_DIR = "$env:HOMEPATH/bin"
-try {
-  cs update cs
-}
-catch [System.Management.Automation.CommandNotFoundException] {
-  cmd.exe /C 'bitsadmin /transfer cs-cli https://git.io/coursier-cli-windows-exe "%cd%\cs.exe"'
-}
-
-cs install scala3-repl scala3-compiler
-cargo install tree-sitter-cli
+# $deprecated_files = @(
+#   "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\profiles.json"
+# )
+# foreach ($deprecated_file in $deprecated_files) {
+#   if (Test-Path -PathType Leaf $deprecated_file) {
+#     Remove-Item -Force $deprecated_file
+#   }
+# }
+# $deprecated_dirs = @(
+#   "$env:APPDATA\Hyper"
+# )
+# foreach ($deprecated_dir in $deprecated_dirs) {
+#   if (Test-Path -PathType Container $deprecated_dir) {
+#     Remove-Item -Force -Recurse $deprecated_dir
+#   }
+# }
