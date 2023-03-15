@@ -1,5 +1,2 @@
-[submodule "nixos-config"]
-	path = .config/from_nixos
-	url = git@github.com:Sumi-Sumi/nixos-config.git
 [submodule ".config/from_nixos"]
 	url = https://github.com/Sumi-Sumi/nixos-config
