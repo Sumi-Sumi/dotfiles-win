@@ -116,7 +116,7 @@ if (Test-Path ("$DOTFILES")) {
 }
 else {
   git config --global core.autoCRLF false
-  git clone $DOTFILES_GITURL $env:USERPROFILE\.dotfiles
+  git clone --recursive $DOTFILES_GITURL $env:USERPROFILE\.dotfiles
 }
 
 if ($isVM){
