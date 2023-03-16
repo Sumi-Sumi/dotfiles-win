@@ -91,10 +91,10 @@ wsl --update
 wsl --shutdown
 
 # Powershell modules
-Install-Module -Scope CurrentUser syntax-highlighting
-Install-Module -Scope CurrentUser PSWindowsUpdate
-Install-Module -Scope CurrentUser WslInterop
-Install-Module -Scope CurrentUser PSFzf
+Install-Module -Force -Scope CurrentUser syntax-highlighting
+Install-Module -Force -Scope CurrentUser PSWindowsUpdate
+Install-Module -Force -Scope CurrentUser WslInterop
+Install-Module -Force -Scope CurrentUser PSFzf
 
 # git
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitconfig -Value $DOTCONFIG\git\config
