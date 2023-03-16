@@ -51,16 +51,10 @@ $env:PATH = $newPath + ";" + $env:PATH
 
 switch ((Get-WmiObject -Class Win32_ComputerSystem).Model) {
   "Virtual Machine" {
-    $isVM = $true
-  }
-  "VMware Virtual Platform" {
-    $isVM = $true
-  }
-  "VirtualBox" {
-    $isVM = $true
+    $isSandbox = $true
   }
   default {
-    $isVM = $false
+    $isSandbox = $false
   }
 }
 
@@ -100,6 +94,9 @@ $PACKAGES = @(
   "rustup"
   "starship"
   "tree-sitter"
+  "sqlite"
+  "make"
+  "cmake"
 )
 scoop install $UTILS
 scoop bucket add versions
@@ -119,7 +116,7 @@ else {
   git clone --recursive $DOTFILES_GITURL $env:USERPROFILE\.dotfiles
 }
 
-if ($isVM){
+if ($isSandbox){
   iwr -Uri "https://www.nuget.org/api/v2/package/Microsoft.UI.Xaml/2.7.3" -OutFile "$env:TEMP/ms_ui_xaml.zip"
   New-Item $env:TEMP/ms_ui_xaml -Force -ItemType Directory
   Expand-Archive "$env:TEMP/ms_ui_xaml.zip" -DestinationPath "$env:TEMP/ms_ui_xaml"
