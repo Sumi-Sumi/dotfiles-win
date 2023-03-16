@@ -98,11 +98,13 @@ $PACKAGES = @(
   "make"
   "cmake"
   "openssh"
+  "udevgothic-nf"
 )
 scoop install $UTILS
 scoop bucket add versions
 scoop bucket add extras
 scoop bucket add java
+scoop bucket add my-bucket https://github.com/Sumi-Sumi/scoop-bucket
 scoop update *
 scoop install $PACKAGES
 # scoop update --force "vscode-insiders"
@@ -208,6 +210,12 @@ $env:GOPATH = $env:USERPROFILE
 
 # security policy
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
+# add task scheduler
+$Trigger = New-ScheduledTaskTrigger -AtStartup
+$Action = New-ScheduledTaskAction -Execute "komorebi -a"
+Register-ScheduledTask -TaskName "Launch komorebi" -Action $Action -Trigger $Trigger
+
 # $GOPACKAGES = @(
 #   "golang.org/x/tools/cmd/goimports"
 #   "golang.org/x/tools/cmd/gopls"
