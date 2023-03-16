@@ -3,7 +3,7 @@ Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 # Set-ExecutionPolicy -Scope Process Unrestricted
 
 $DOTFILES = "$env:USERPROFILE\.dotfiles"
-$DOTFILES_GITURL = "https://github.com/Sumi-Sumi/dotfiles-win"
+$DOTFILES_GITURL = "https://github.com/Sumi-Sumi/dotfiles4win"
 
 # envs{{{
 [System.Environment]::SetEnvironmentVariable("COURSIER_BIN_DIR", "$env:USERPROFILE\bin", "User")
@@ -12,7 +12,7 @@ $DOTFILES_GITURL = "https://github.com/Sumi-Sumi/dotfiles-win"
 [System.Environment]::SetEnvironmentVariable("PIPX_BIN_DIR", "$env:USERPROFILE\bin", "User")
 [System.Environment]::SetEnvironmentVariable("PYTHONUSERBASE", "$env:USERPROFILE", "User")
 [System.Environment]::SetEnvironmentVariable("JAVA_TOOL_OPTIONS", "-Dconsole.encoding=UTF-8 -Dfile.encoding=UTF-8", "User")
-[System.Environment]::SetEnvironmentVariable("STARSHIP_CONFIG", "$env:USERPROFILE\.dotfiles\.config\from_nixos\apps\common\shell\starship\starship.toml", "User")
+[System.Environment]::SetEnvironmentVariable("STARSHIP_CONFIG", "$env:USERPROFILE\.config\starship\starship.toml", "User")
 [System.Environment]::SetEnvironmentVariable("KOMOREBI_CONFIG_HOME", "$env:USERPROFILE\.dotfiles\.config\komorebi", "User")
 $newPath = @(
   "$env:USERPROFILE\.poetry\bin"
@@ -139,7 +139,7 @@ else {
   wsl --update
 }
 
-winget import $DOTFILES\winget.json
+winget import --ignore-unavailable --accept-source-agreements --accept-package-agreement $DOTFILES\winget.json
 
 # profile
 $PSUSERHOME = $profile -replace "^(.*)\\.*$", "`$1" -replace "^(.*)\\.*$", "`$1"
@@ -205,6 +205,9 @@ npm install -g $NPMPACKAGES
 # golang
 $env:GO111MODULE = "on"
 $env:GOPATH = $env:USERPROFILE
+
+# security policy
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 # $GOPACKAGES = @(
 #   "golang.org/x/tools/cmd/goimports"
 #   "golang.org/x/tools/cmd/gopls"
