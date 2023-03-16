@@ -154,7 +154,7 @@ New-Item -Path $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbw
 New-Item -Path $env:USERPROFILE\.ssh -Force -ItemType Directory
 
 # runas
-Start-Process powershell.exe ("-NoProfile -Command cd " + $env:USERPROFILE + "\.dotfiles; .\runas.ps1") -Verb runas
+Start-Process powershell.exe ("-NoProfile -Command cd " + $env:USERPROFILE + "\.dotfiles\scripts; .\run_admin.ps1") -Verb runas
 
 $env:PIPX_BIN_DIR = "$env:USERPROFILE\bin"
 $env:PYTHONUSERBASE = "$env:USERPROFILE"
