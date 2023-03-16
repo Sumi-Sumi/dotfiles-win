@@ -97,6 +97,7 @@ $PACKAGES = @(
   "sqlite"
   "make"
   "cmake"
+  "openssh"
 )
 scoop install $UTILS
 scoop bucket add versions
@@ -138,7 +139,7 @@ else {
   wsl --update
 }
 
-winget --import $DOTFILES\winget.json
+winget import $DOTFILES\winget.json
 
 # profile
 $PSUSERHOME = $profile -replace "^(.*)\\.*$", "`$1" -replace "^(.*)\\.*$", "`$1"
@@ -152,6 +153,10 @@ New-Item $env:LOCALAPPDATA\nvim -Force -ItemType Directory
 New-Item -Path $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState -Force -ItemType Directory
 # ssh
 New-Item -Path $env:USERPROFILE\.ssh -Force -ItemType Directory
+# chmod 600
+icacls $env:USERPROFILE\.ssh /t /inheritance:r /grant $env:username":rw"
+$DATE = Get-Date -Format "yyyy-MM-dd"
+ssh-keygen -t ed25519 -C "$env:username@$env:computername-$DATE" -f $env:userprofile\.ssh\id_ed25519
 
 # runas
 Start-Process powershell.exe ("-NoProfile -Command cd " + $env:USERPROFILE + "\.dotfiles\scripts; .\run_admin.ps1") -Verb runas
