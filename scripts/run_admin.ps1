@@ -72,12 +72,15 @@ foreach ($disableFeature in $disableFeatures) {
 }
 
 # profile
-New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.profile.ps1 -Value $DOTCONFIG\powershell\profile.ps1
-
+# New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.profile.ps1 -Value $DOTCONFIG\powershell\profile.ps1
 ## Windows Powershell
-New-Item -Force -ItemType SymbolicLink -Path $PSUSERHOME\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 -Value $DOTCONFIG\profile.ps1
+New-Item -Force -ItemType SymbolicLink -Path $PSUSERHOME\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 -Value $DOTCONFIG\powershell\profile.ps1
 ## Powershell Core
-New-Item -Force -ItemType SymbolicLink -Path $PSUSERHOME\PowerShell\Microsoft.PowerShell_profile.ps1 -Value $DOTCONFIG\profile.ps1
+New-Item -Force -ItemType SymbolicLink -Path $PSUSERHOME\PowerShell\Microsoft.PowerShell_profile.ps1 -Value $DOTCONFIG\powershell\profile.ps1
+
+# starship
+New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.config\starship\starship.toml -Value $DOTNIXCONFIG\common\shell\starship\starship.toml
+
 ## VSCode
 New-Item -Force -ItemType SymbolicLink -Path $PSUSERHOME\WindowsPowerShell\Microsoft.VSCode_profile.ps1 -Value $DOTCONFIG\profile.ps1
 
