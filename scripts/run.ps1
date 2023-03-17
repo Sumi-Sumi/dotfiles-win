@@ -141,7 +141,7 @@ else {
   wsl --update
 }
 
-winget import --ignore-unavailable --accept-source-agreements --accept-package-agreement $DOTFILES\winget.json
+winget import --ignore-unavailable --accept-source-agreements --accept-package-agreements $DOTFILES\winget.json
 
 # profile
 $PSUSERHOME = $profile -replace "^(.*)\\.*$", "`$1" -replace "^(.*)\\.*$", "`$1"
