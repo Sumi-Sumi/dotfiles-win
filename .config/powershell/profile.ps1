@@ -35,10 +35,9 @@ $localrc = "$env:HOMEPATH/.profile.local.ps1"
 if (Test-Path $localrc) {
   . $localrc
 }
-# starshipの有効化
-Invoke-Expression (&starship init powershell)
 # WSLのコマンドをpowershellから呼び出す
 # Import-WslCommand "apt", "awk", "emacs", "find", "grep", "head", "less", "ls", "man", "sed", "seq", "ssh", "sudo", "tail", "touch"
 # fzfの統合
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
-
+# starshipの有効化
+Invoke-Expression (&starship init powershell)
