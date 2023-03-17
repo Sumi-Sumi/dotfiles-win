@@ -1,0 +1,260 @@
+{
+    "buckets": [
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": {
+                "value": "\/Date(1679027254000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Friday, March 17, 2023 1:27:34 PM"
+            },
+            "Manifests": 1787
+        },
+        {
+            "Name": "java",
+            "Source": "https://github.com/ScoopInstaller/Java",
+            "Updated": {
+                "value": "\/Date(1679015796000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Friday, March 17, 2023 10:16:36 AM"
+            },
+            "Manifests": 254
+        },
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main",
+            "Updated": {
+                "value": "\/Date(1679027355000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Friday, March 17, 2023 1:29:15 PM"
+            },
+            "Manifests": 1176
+        },
+        {
+            "Name": "my-bucket",
+            "Source": "https://github.com/Sumi-Sumi/scoop-bucket",
+            "Updated": {
+                "value": "\/Date(1678993112000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Friday, March 17, 2023 3:58:32 AM"
+            },
+            "Manifests": 2
+        },
+        {
+            "Name": "versions",
+            "Source": "https://github.com/ScoopInstaller/Versions",
+            "Updated": {
+                "value": "\/Date(1679028001000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Friday, March 17, 2023 1:40:01 PM"
+            },
+            "Manifests": 417
+        }
+    ],
+    "apps": [
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "7zip",
+            "Version": "22.01",
+            "Updated": "\/Date(1679025612433)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "aria2",
+            "Version": "1.36.0-1",
+            "Updated": "\/Date(1679025613692)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "bat",
+            "Version": "0.22.1",
+            "Updated": "\/Date(1679025653388)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "cmake",
+            "Version": "3.26.0",
+            "Updated": "\/Date(1679025673277)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "ctags",
+            "Version": "5.8",
+            "Updated": "\/Date(1679025675155)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "dark",
+            "Version": "3.11.2",
+            "Updated": "\/Date(1679025615152)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "delta",
+            "Version": "0.15.1",
+            "Updated": "\/Date(1679031368650)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "fd",
+            "Version": "8.7.0",
+            "Updated": "\/Date(1679025676808)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "fzf",
+            "Version": "0.38.0",
+            "Updated": "\/Date(1679025677871)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "git",
+            "Version": "2.40.0.windows.1",
+            "Updated": "\/Date(1679025624590)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "go",
+            "Version": "1.20.2",
+            "Updated": "\/Date(1679025711792)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "innounp",
+            "Version": "0.50",
+            "Updated": "\/Date(1679025713277)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "jq",
+            "Version": "1.6",
+            "Updated": "\/Date(1679025714452)\/"
+        },
+        {
+            "Info": "",
+            "Source": "extras",
+            "Name": "lazygit",
+            "Version": "0.37.0",
+            "Updated": "\/Date(1679031327261)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "lessmsi",
+            "Version": "1.10.0",
+            "Updated": "\/Date(1679025625693)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "make",
+            "Version": "4.4.1",
+            "Updated": "\/Date(1679025715996)\/"
+        },
+        {
+            "Info": "",
+            "Source": "java",
+            "Name": "microsoft-lts-jdk",
+            "Version": "17.0.6",
+            "Updated": "\/Date(1679025726168)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "neofetch",
+            "Version": "7.1.0",
+            "Updated": "\/Date(1679031336219)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "neovim",
+            "Version": "0.8.3",
+            "Updated": "\/Date(1679025735261)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "nodejs-lts",
+            "Version": "18.15.0",
+            "Updated": "\/Date(1679025744966)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "openssh",
+            "Version": "9.2.0.0p1",
+            "Updated": "\/Date(1679025746373)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "python",
+            "Version": "3.11.2",
+            "Updated": "\/Date(1679025783948)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "ripgrep",
+            "Version": "13.0.0",
+            "Updated": "\/Date(1679025786478)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "ruby",
+            "Version": "3.2.1-1",
+            "Updated": "\/Date(1679025844527)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "rustup",
+            "Version": "1.25.2",
+            "Updated": "\/Date(1679025883882)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "sqlite",
+            "Version": "3.41.1",
+            "Updated": "\/Date(1679025887121)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "starship",
+            "Version": "1.13.1",
+            "Updated": "\/Date(1679025888547)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "tree-sitter",
+            "Version": "0.20.7",
+            "Updated": "\/Date(1679025890215)\/"
+        },
+        {
+            "Info": "",
+            "Source": "my-bucket",
+            "Name": "udevgothic-nf",
+            "Version": "1.1.0",
+            "Updated": "\/Date(1679025896453)\/"
+        }
+    ]
+}
+
