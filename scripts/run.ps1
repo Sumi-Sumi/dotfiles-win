@@ -77,38 +77,12 @@ $UTILS = @(
   "git"
 )
 
-$PACKAGES = @(
-  "bat"
-  "ctags"
-  "fd"
-  "fzf"
-  "go"
-  "innounp"
-  "jq"
-  "microsoft-lts-jdk"
-  "neovim"
-  "nodejs-lts"
-  "python"
-  "ripgrep"
-  "ruby"
-  "rustup"
-  "starship"
-  "tree-sitter"
-  "sqlite"
-  "make"
-  "cmake"
-  "openssh"
-  "udevgothic-nf"
-)
 scoop install $UTILS
 scoop bucket add versions
 scoop bucket add extras
 scoop bucket add java
 scoop bucket add my-bucket https://github.com/Sumi-Sumi/scoop-bucket
 scoop update *
-scoop install $PACKAGES
-# scoop update --force "vscode-insiders"
-scoop reset microsoft-lts-jdk
 
 if (Test-Path ("$DOTFILES")) {
   Set-Location $DOTFILES
@@ -118,6 +92,10 @@ else {
   git config --global core.autoCRLF false
   git clone --recursive $DOTFILES_GITURL $env:USERPROFILE\.dotfiles
 }
+
+scoop import $DOTFILES/pkgs/scoop.json
+# scoop update --force "vscode-insiders"
+scoop reset microsoft-lts-jdk
 
 if ($isSandbox){
   iwr -Uri "https://www.nuget.org/api/v2/package/Microsoft.UI.Xaml/2.7.3" -OutFile "$env:TEMP/ms_ui_xaml.zip"
@@ -141,7 +119,7 @@ else {
   wsl --update
 }
 
-winget import --ignore-unavailable --accept-source-agreements --accept-package-agreements $DOTFILES\winget.json
+winget import --ignore-unavailable --accept-source-agreements --accept-package-agreements $DOTFILES\pkgs\winget.json
 
 # profile
 $PSUSERHOME = $profile -replace "^(.*)\\.*$", "`$1" -replace "^(.*)\\.*$", "`$1"
