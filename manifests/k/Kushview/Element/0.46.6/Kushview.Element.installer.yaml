@@ -1,0 +1,12 @@
+# Created using wingetcreate 1.2.5.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.4.0.schema.json
+
+PackageIdentifier: Kushview.Element
+PackageVersion: 0.46.6
+Installers:
+- InstallerUrl: https://github.com/kushview/Element/releases/download/0.46.6/element-win64-0.46.6.exe
+  Architecture: x64
+  InstallerType: nullsoft
+  InstallerSha256: 97F7C925E393B93BBE4ADAE9490CBAE00A9E3B1C59121F1D354522D28E7955AC
+ManifestType: installer
+ManifestVersion: 1.4.0

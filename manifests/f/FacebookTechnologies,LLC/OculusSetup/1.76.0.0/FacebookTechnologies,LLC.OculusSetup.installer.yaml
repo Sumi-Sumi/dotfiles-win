@@ -1,0 +1,14 @@
+# Created using wingetcreate 1.2.5.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.4.0.schema.json
+
+PackageIdentifier: FacebookTechnologies,LLC.OculusSetup
+PackageVersion: 1.76.0.0
+Installers:
+- InstallerUrl: https://www.oculus.com/download_app/?id=1582076955407037&utm_source=www.startpage.com&utm_medium=oculusredirect
+  Architecture: x64
+  InstallerType: exe
+  InstallerSha256: CAE414E3532559763E2AA22B3D2C1B1FE6750B310CAD2923CBC92C26DAFE67AB
+  InstallModes:
+    - "interactive"
+ManifestType: installer
+ManifestVersion: 1.4.0

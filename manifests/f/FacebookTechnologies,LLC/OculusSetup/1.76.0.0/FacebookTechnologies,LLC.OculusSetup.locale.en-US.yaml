@@ -1,0 +1,13 @@
+# Created using wingetcreate 1.2.5.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.4.0.schema.json
+
+PackageIdentifier: FacebookTechnologies,LLC.OculusSetup
+PackageVersion: 1.76.0.0
+PackageLocale: en-US
+Publisher: Facebook Technologies, LLC
+PackageName: Oculus Setup
+License: Proprietary
+Copyright: Copyright Â© Facebook Technologies, LLC
+ShortDescription: Oculus Setup
+ManifestType: defaultLocale
+ManifestVersion: 1.4.0
