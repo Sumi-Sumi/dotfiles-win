@@ -40,4 +40,4 @@ if (Test-Path $localrc) {
 # fzfの統合
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
 # starshipの有効化
-Invoke-Expression (&starship init powershell)
+Invoke-Expression (& '~/scoop/apps/starship/current/starship.exe' init powershell --print-full-init | Out-String)
