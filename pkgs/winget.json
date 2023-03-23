@@ -1,11 +1,29 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2023-03-17T13:58:42.095-00:00",
+	"CreationDate" : "2023-03-23T11:27:07.308-00:00",
 	"Sources" : 
 	[
 		{
 			"Packages" : 
 			[
+				{
+					"PackageIdentifier" : "9P6T8HXSG978"
+				}
+			],
+			"SourceDetails" : 
+			{
+				"Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+				"Identifier" : "StoreEdgeFD",
+				"Name" : "msstore",
+				"Type" : "Microsoft.Rest"
+			}
+		},
+		{
+			"Packages" : 
+			[
+				{
+					"PackageIdentifier" : "File-New-Project.EarTrumpet"
+				},
 				{
 					"PackageIdentifier" : "MichaelTippach.ASIO4ALL"
 				},
@@ -16,9 +34,6 @@
 					"PackageIdentifier" : "Discord.Discord"
 				},
 				{
-					"PackageIdentifier" : "Git.Git"
-				},
-				{
 					"PackageIdentifier" : "KDE.Krita"
 				},
 				{
@@ -52,6 +67,9 @@
 					"PackageIdentifier" : "Unity.UnityHub"
 				},
 				{
+					"PackageIdentifier" : "VB-Audio.Voicemeeter.Banana"
+				},
+				{
 					"PackageIdentifier" : "VivaldiTechnologies.Vivaldi"
 				},
 				{
@@ -81,115 +99,11 @@
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
 				},
-                        {
-					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
-				},
 				{
 					"PackageIdentifier" : "BlenderFoundation.Blender"
 				},
 				{
-					"PackageIdentifier" : "NewTek.NDI5Runtime"
-				},
-				{
-					"PackageIdentifier" : "SomePythonThings.WingetUIStore"
-				},
-				{
-					"PackageIdentifier" : "LGUG2Z.komorebi"
-				}
-			],
-			"SourceDetails" : 
-			{
-				"Argument" : "https://cdn.winget.microsoft.com/cache",
-				"Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
-				"Name" : "winget",
-				"Type" : "Microsoft.PreIndexed.Package"
-			}
-		}
-	],
-	"WinGetVersion" : "1.4.10173"
-}
-{
-	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2023-03-17T14:08:46.778-00:00",
-	"Sources" : 
-	[
-		{
-			"Packages" : 
-			[
-				{
-					"PackageIdentifier" : "Microsoft.VisualStudio.2022.Community"
-				},
-				{
-					"PackageIdentifier" : "MichaelTippach.ASIO4ALL"
-				},
-				{
-					"PackageIdentifier" : "Discord.Discord"
-				},
-				{
-					"PackageIdentifier" : "Git.Git"
-				},
-				{
-					"PackageIdentifier" : "KDE.Krita"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.Edge"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.EdgeWebView2Runtime"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.WindowsTerminal"
-				},
-				{
-					"PackageIdentifier" : "Mozilla.Firefox"
-				},
-				{
-					"PackageIdentifier" : "OBSProject.OBSStudio"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.OneDrive"
-				},
-				{
-					"PackageIdentifier" : "Valve.Steam"
-				},
-				{
-					"PackageIdentifier" : "TeraTermProject.teraterm"
-				},
-				{
-					"PackageIdentifier" : "Unity.Unity.2020"
-				},
-				{
-					"PackageIdentifier" : "Unity.UnityHub"
-				},
-				{
-					"PackageIdentifier" : "VivaldiTechnologies.Vivaldi"
-				},
-				{
-					"PackageIdentifier" : "Zoom.Zoom"
-				},
-				{
-					"PackageIdentifier" : "Element.Element"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
-				},
-				{
-					"PackageIdentifier" : "Nextcloud.NextcloudDesktop"
-				},
-				{
-					"PackageIdentifier" : "VirtualDesktop.Streamer"
-				},
-				{
-					"PackageIdentifier" : "nathancorvussolis.corvusskk"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
-				},
-				{
-					"PackageIdentifier" : "BlenderFoundation.Blender"
+					"PackageIdentifier" : "Microsoft.PowerToys"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
@@ -198,43 +112,16 @@
 					"PackageIdentifier" : "NewTek.NDI5Runtime"
 				},
 				{
-					"PackageIdentifier" : "BlenderFoundation.Blender"
-				},
-				{
 					"PackageIdentifier" : "SomePythonThings.WingetUIStore"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
-				},
-				{
-					"PackageIdentifier" : "BlenderFoundation.Blender"
-				},
-				{
-					"PackageIdentifier" : "Nvidia.GeForceExperience"
 				},
 				{
 					"PackageIdentifier" : "wez.wezterm"
 				},
 				{
-					"PackageIdentifier" : "BlenderFoundation.Blender"
-				},
-				{
-					"PackageIdentifier" : "SlackTechnologies.Slack"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
-				},
-				{
 					"PackageIdentifier" : "LGUG2Z.komorebi"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.WindowsSDK"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				}
 			],
 			"SourceDetails" : 
@@ -243,27 +130,6 @@
 				"Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
 				"Name" : "winget",
 				"Type" : "Microsoft.PreIndexed.Package"
-			}
-		},
-		{
-			"Packages" : 
-			[
-				{
-					"PackageIdentifier" : "9MVZQVXJBQ9V"
-				},
-				{
-					"PackageIdentifier" : "9N95Q1ZZPMH4"
-				},
-				{
-					"PackageIdentifier" : "XPDCFJDKLZJLP8"
-				}
-			],
-			"SourceDetails" : 
-			{
-				"Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
-				"Identifier" : "StoreEdgeFD",
-				"Name" : "msstore",
-				"Type" : "Microsoft.Rest"
 			}
 		}
 	],
