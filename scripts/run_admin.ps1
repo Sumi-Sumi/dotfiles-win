@@ -19,6 +19,9 @@ Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "Long
 Set-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" -Name "RealTimeIsUniversal" -Value 1
 Set-ItemProperty "HKCU:\Control Panel\Desktop" -Name "PaintDesktopVersion" -Value 1
 
+# local manifestからwingetできるようにする
+winget settings --enable LocalManifestFiles
+
 switch ((Get-WmiObject -Class Win32_ComputerSystem).Model) {
   "Virtual Machine" {
     $isVM = $true
@@ -73,9 +76,9 @@ foreach ($disableFeature in $disableFeatures) {
 
 # profile
 # New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.profile.ps1 -Value $DOTCONFIG\powershell\profile.ps1
-## Windows Powershell
+# Windows Powershell
 New-Item -Force -ItemType SymbolicLink -Path $PSUSERHOME\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 -Value $DOTCONFIG\powershell\profile.ps1
-## Powershell Core
+# Powershell Core
 New-Item -Force -ItemType SymbolicLink -Path $PSUSERHOME\PowerShell\Microsoft.PowerShell_profile.ps1 -Value $DOTCONFIG\powershell\profile.ps1
 
 # starship
