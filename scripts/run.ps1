@@ -3,7 +3,7 @@ Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 # Set-ExecutionPolicy -Scope Process Unrestricted
 
 $DOTFILES = "$env:USERPROFILE\.dotfiles"
-$DOTFILES_GITURL = "https://github.com/Sumi-Sumi/dotfiles4win"
+$DOTFILES_GITURL = "https://github.com/misumisumi/dotfiles4win"
 
 # envs{{{
 [System.Environment]::SetEnvironmentVariable("COURSIER_BIN_DIR", "$env:USERPROFILE\bin", "User")
@@ -81,7 +81,7 @@ scoop install $UTILS
 scoop bucket add versions
 scoop bucket add extras
 scoop bucket add java
-scoop bucket add my-bucket https://github.com/Sumi-Sumi/scoop-bucket
+scoop bucket add my-bucket https://github.com/misumisumi/scoop-bucket
 scoop update *
 
 if (Test-Path ("$DOTFILES")) {
@@ -136,7 +136,7 @@ New-Item -Path $env:USERPROFILE\.ssh -Force -ItemType Directory
 # chmod 600
 icacls $env:USERPROFILE\.ssh /t /inheritance:r /grant $env:username":rw"
 $DATE = Get-Date -Format "yyyy-MM-dd"
-ssh-keygen -t ed25519 -C "$env:username@$env:computername-$DATE" -f $env:userprofile\.ssh\id_ed25519
+ssh-keygen -t ed25519 -C "$env:username@$env:computername-$DATE" -P "" -f $env:userprofile\.ssh\id_ed25519
 
 # runas
 Start-Process powershell.exe ("-NoProfile -Command cd " + $env:USERPROFILE + "\.dotfiles\scripts; .\run_admin.ps1") -Verb runas
@@ -193,6 +193,10 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 $Trigger = New-ScheduledTaskTrigger -AtStartup
 $Action = New-ScheduledTaskAction -Execute "komorebi -a"
 Register-ScheduledTask -TaskName "Launch komorebi" -Action $Action -Trigger $Trigger
+
+# install from local manifest
+winget install -m ../manifests/k/Kushview/Element/0.46.6/
+winget install -m ../manifests/f/FacebookTechnologies,LLC/OculusSetup/1.76.0.0
 
 # $GOPACKAGES = @(
 #   "golang.org/x/tools/cmd/goimports"
