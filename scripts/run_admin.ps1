@@ -81,6 +81,9 @@ New-Item -Force -ItemType SymbolicLink -Path $PSUSERHOME\PowerShell\Microsoft.Po
 # starship
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.config\starship\starship.toml -Value $DOTNIXCONFIG\common\shell\starship\starship.toml
 
+# komorebi
+New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.config\komorebi -Value $DOTCONFIG\komorebi
+
 ## VSCode
 New-Item -Force -ItemType SymbolicLink -Path $PSUSERHOME\WindowsPowerShell\Microsoft.VSCode_profile.ps1 -Value $DOTCONFIG\profile.ps1
 
