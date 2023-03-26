@@ -1,5 +1,5 @@
 [commit]
-	template = "~/.config/git/message"
+	template = "~/.gitmessage"
 
 [core]
 	pager = "delta"
