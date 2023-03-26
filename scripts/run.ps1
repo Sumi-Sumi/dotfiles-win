@@ -4,6 +4,7 @@ Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
 $DOTFILES = "$env:USERPROFILE\.dotfiles"
 $DOTFILES_GITURL = "https://github.com/misumisumi/dotfiles4win"
+$NVIMDOTS_GITURL = "https://github.com/misumisumi/nvimdots"
 
 # envs{{{
 [System.Environment]::SetEnvironmentVariable("COURSIER_BIN_DIR", "$env:USERPROFILE\bin", "User")
@@ -91,6 +92,7 @@ if (Test-Path ("$DOTFILES")) {
 else {
   git config --global core.autoCRLF false
   git clone --recursive $DOTFILES_GITURL $env:USERPROFILE\.dotfiles
+  git clone --recursive $DOTFILES_GITURL $env:USERPROFILE\.config\nvim
 }
 
 scoop import $DOTFILES/pkgs/scoop.json
@@ -127,8 +129,6 @@ $PSUSERHOME = $profile -replace "^(.*)\\.*$", "`$1" -replace "^(.*)\\.*$", "`$1"
 New-Item $PSUSERHOME\WindowsPowerShell -Force -ItemType Directory
 ## Powershell Core
 New-Item $PSUSERHOME\PowerShell -Force -ItemType Directory
-# neovim
-New-Item $env:LOCALAPPDATA\nvim -Force -ItemType Directory
 # Windows Terminal
 New-Item -Path $env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState -Force -ItemType Directory
 # ssh

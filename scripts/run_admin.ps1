@@ -83,6 +83,8 @@ New-Item -Force -ItemType SymbolicLink -Path $PSUSERHOME\PowerShell\Microsoft.Po
 
 # starship
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.config\starship\starship.toml -Value $DOTNIXCONFIG\common\shell\starship\starship.toml
+# neovim
+New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.config\nvim -Value $USERPROFILE/AppData/Local/nvim
 
 # komorebi
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.config\komorebi -Value $DOTCONFIG\komorebi
