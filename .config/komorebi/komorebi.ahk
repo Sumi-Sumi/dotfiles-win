@@ -4,6 +4,7 @@
 #Include %A_ScriptDir%\komorebic.lib.ahk
 ; https://github.com/LGUG2Z/komorebi/#generating-common-application-specific-configurations
 #Include %A_ScriptDir%\komorebi.generated.ahk
+#Include %A_ScriptDir%\workspace-rule.ahk
 
 ; Default to minimizing windows when switching workspaces
 WindowHidingBehaviour("minimize")
@@ -14,14 +15,9 @@ CrossMonitorMoveBehaviour("insert")
 ; Enable hot reloading of changes to this file
 WatchConfiguration("enable")
 
-; Ensure there is 1 workspace created on monitor 0
-EnsureWorkspaces(0, 1)
 
 ; Configure the invisible border dimensions
-InvisibleBorders(7, 0, 14, 7)
-
-; Configure the 1st workspace
-WorkspaceName(0, 0, "I")
+; InvisibleBorders(2, 0, 4, 2)
 
 ; Uncomment the next two lines if you want a visual border drawn around the focused window
 ActiveWindowBorderColour(66, 165, 245, "single") ; this is a nice blue colour
@@ -68,7 +64,7 @@ return
 CycleWorkspace("next")
 return
 
-<!^p::
+<!^h::
 CycleWorkspace("previous")
 return
 
@@ -111,60 +107,84 @@ return
 
 ; Forcus workspace
 <!1::
-FocusWorkspace(1)
+FocusWorkspace(0)
 return
 
 <!2::
-FocusWorkspace(2)
+FocusWorkspace(1)
 return
 
 <!3::
-FocusWorkspace(3)
+FocusWorkspace(2)
 return
 
 <!4::
-FocusWorkspace(4)
+FocusWorkspace(3)
 return
 
 <!5::
-FocusWorkspace(5)
+FocusWorkspace(4)
 return
 
 <!6::
-FocusWorkspace(6)
+FocusWorkspace(5)
 return
 
 <!7::
+FocusWorkspace(6)
+return
+
+<!8::
 FocusWorkspace(7)
+return
+
+<!9::
+FocusWorkspace(8)
+return
+
+<!0::
+FocusWorkspace(9)
 return
 
 ; Send window to workspace
 <!+1::
-SendToWorkspace(1)
+SendToWorkspace(0)
 return
 
 <!+2::
-SendToWorkspace(2)
+SendToWorkspace(1)
 return
 
 <!+3::
-SendToWorkspace(3)
+SendToWorkspace(2)
 return
 
 <!+4::
-SendToWorkspace(4)
+SendToWorkspace(3)
 return
 
 <!+5::
-SendToWorkspace(5)
+SendToWorkspace(4)
 return
 
 <!+6::
-SendToWorkspace(6)
+SendToWorkspace(5)
 return
 
 <!+7::
+SendToWorkspace(6)
+return
+
+<!+8::
 SendToWorkspace(7)
+return
+
+<!+9::
+SendToWorkspace(8)
+return
+
+<!+0::
+SendToWorkspace(9)
 return
 
 ; There are many more commands that you can bind to whatever keys combinations you want<!
