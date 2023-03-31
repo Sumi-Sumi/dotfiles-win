@@ -121,8 +121,6 @@ else {
   wsl --update
 }
 
-winget import --ignore-unavailable --accept-source-agreements --accept-package-agreements $DOTFILES\pkgs\winget.json
-
 # profile
 $PSUSERHOME = $profile -replace "^(.*)\\.*$", "`$1" -replace "^(.*)\\.*$", "`$1"
 ## Windows Powershell
