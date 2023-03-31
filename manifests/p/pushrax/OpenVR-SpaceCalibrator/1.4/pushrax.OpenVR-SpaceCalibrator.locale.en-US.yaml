@@ -1,0 +1,15 @@
+# Created using wingetcreate 1.2.5.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.4.0.schema.json
+
+PackageIdentifier: pushrax.OpenVR-SpaceCalibrator
+PackageVersion: 1.4
+PackageLocale: en-US
+Publisher: pushrax
+PublisherUrl: https://github.com/pushrax/OpenVR-SpaceCalibrator
+PublisherSupportUrl: https://github.com/pushrax/OpenVR-SpaceCalibrator
+PackageName: OpenVR-SpaceCalibrator
+PackageUrl: https://github.com/pushrax/OpenVR-SpaceCalibrator
+License: MIT License
+ShortDescription: Use tracked VR devices from one company with any other.
+ManifestType: defaultLocale
+ManifestVersion: 1.4.0

@@ -1,0 +1,12 @@
+# Created using wingetcreate 1.2.5.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.4.0.schema.json
+
+PackageIdentifier: dev47apps.droidcam-obs-plugin
+PackageVersion: 2.0.1
+Installers:
+- Architecture: x86
+  InstallerType: nullsoft
+  InstallerUrl: https://github.com/dev47apps/droidcam-obs-plugin/releases/download/2.0.1/DroidCamOBS.Setup.2.0.1.exe
+  InstallerSha256: 3178D9B2A5898E918CA85B8D11C032F3C974097020F53ED167F47D81BF5D6E7B
+ManifestType: installer
+ManifestVersion: 1.4.0

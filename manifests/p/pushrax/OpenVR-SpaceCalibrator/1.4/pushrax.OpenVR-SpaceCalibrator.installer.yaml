@@ -1,0 +1,12 @@
+# Created using wingetcreate 1.2.5.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.4.0.schema.json
+
+PackageIdentifier: pushrax.OpenVR-SpaceCalibrator
+PackageVersion: 1.4
+Installers:
+- Architecture: x86
+  InstallerType: nullsoft
+  InstallerUrl: https://github.com/pushrax/OpenVR-SpaceCalibrator/releases/download/v1.4/OpenVR-SpaceCalibrator-1-4.exe
+  InstallerSha256: 42BEDE8D9601BA13874DA72D208C30AF6EEF41920476C9B9DD70C0FEB76C0ADD
+ManifestType: installer
+ManifestVersion: 1.4.0

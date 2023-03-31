@@ -1,0 +1,19 @@
+# Created using wingetcreate 1.2.5.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.4.0.schema.json
+
+PackageIdentifier: dev47apps.droidcam-obs-plugin
+PackageVersion: 2.0.1
+PackageLocale: en-US
+Publisher: dev47apps
+PublisherUrl: https://dev47apps.com/obs/
+PublisherSupportUrl: https://dev47apps.com/obs/
+Author: dev47apps
+PackageName: droidcam-obs-plugin
+PackageUrl: https://dev47apps.com/obs/
+License: GPL-2.0
+ShortDescription: droidcam-obs-plugin
+Description: droidcam-obs-plugin
+ReleaseNotes: https://github.com/dev47apps/droidcam-obs-plugin/releases
+ReleaseNotesUrl: https://github.com/dev47apps/droidcam-obs-plugin/releases
+ManifestType: defaultLocale
+ManifestVersion: 1.4.0
