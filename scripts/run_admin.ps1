@@ -1,7 +1,8 @@
 fsutil 8dot3name set 1
 $DOTFILES = "$env:USERPROFILE\.dotfiles"
 $DOTCONFIG = "$DOTFILES\.config"
-$DOTNIXCONFIG = "$DOTCONFIG\from_nixos\apps"
+$DOTNIXCOMMONCONFIG = "$DOTCONFIG\from_nixos\common\apps"
+$DOTNIXDESKTOPCONFIG = "$DOTCONFIG\from_nixos\desktop"
 $PSUSERHOME = $profile -replace "^(.*)\\.*$", "`$1" -replace "^(.*)\\.*$", "`$1"
 
 # windows defenderのスキャン対象から外す
@@ -82,21 +83,18 @@ New-Item -Force -ItemType SymbolicLink -Path $PSUSERHOME\WindowsPowerShell\Micro
 New-Item -Force -ItemType SymbolicLink -Path $PSUSERHOME\PowerShell\Microsoft.PowerShell_profile.ps1 -Value $DOTCONFIG\powershell\profile.ps1
 
 # starship
-New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.config\starship\starship.toml -Value $DOTNIXCONFIG\common\shell\starship\starship.toml
-# neovim
-New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.config\nvim -Value $USERPROFILE/AppData/Local/nvim
-
+New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.config\starship\starship.toml -Value $DOTNIXCOMMONCONFIG\shell\starship\starship.toml
 # komorebi
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.config\komorebi -Value $DOTCONFIG\komorebi
 
 ## VSCode
 New-Item -Force -ItemType SymbolicLink -Path $PSUSERHOME\WindowsPowerShell\Microsoft.VSCode_profile.ps1 -Value $DOTCONFIG\profile.ps1
 
-# editorconfig
-New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.editorconfig -Value $DOTNIXCONFIG\common\editorconfig\.editorconfig
-
-# nvim
+# neovim
 New-Item -Force -ItemType SymbolicLink -Path $env:LOCALAPPDATA\nvim -Value $DOTFILES\.config\nvim
+
+# editorconfig
+New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.editorconfig -Value $DOTFILES\.config\nvim\.editorconfig
 
 wsl --update
 wsl --shutdown
@@ -109,10 +107,10 @@ Install-Module -Force -Scope CurrentUser PSFzf
 
 # git
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitconfig -Value $DOTCONFIG\git\config
-New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitignore -Value $DOTNIXCONFIG\common\git\gitignore
-New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitmessage -Value $DOTNIXCONFIG\common\git\gitmessage
+New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitignore -Value $DOTNIXCOMMONCONFIG\git\gitignore
+New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.gitmessage -Value $DOTNIXCOMMONCONFIG\git\gitmessage
 # wezterm
-New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.config\wezterm -Value $DOTNIXCONFIG\desktop\terminal\wezterm
+New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.config\wezterm -Value $DOTNIXDESKTOPCONFIG\userWide\terminal\wezterm
 # New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.bashrc -Value $DOTFILES\.bashrc.windows
 
 # ruby
@@ -147,4 +145,3 @@ New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.config\wezterm -V
 
 # ssh
 # New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.ssh\config -Value $DOTFILES\.ssh\config.windows
-

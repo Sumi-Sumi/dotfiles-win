@@ -48,7 +48,7 @@ if ($oldPath -ne $newPath) {
   [System.Environment]::SetEnvironmentVariable("_PATH_" + (Get-Date -UFormat "%Y%m%d"), $oldPath, "User")
 }
 [System.Environment]::SetEnvironmentVariable("PATH", $newPath, "User")
-$env:PATH = $newPath + ";" + $env:PATH 
+$env:PATH = $newPath + ";" + $env:PATH
 
 switch ((Get-WmiObject -Class Win32_ComputerSystem).Model) {
   "Virtual Machine" {
@@ -92,7 +92,7 @@ if (Test-Path ("$DOTFILES")) {
 else {
   git config --global core.autoCRLF false
   git clone --recursive $DOTFILES_GITURL $env:USERPROFILE\.dotfiles
-  git clone --recursive $DOTFILES_GITURL $env:USERPROFILE\.config\nvim
+  git clone --recursive $NVIMDOTS_GITURL $env:USERPROFILE\.config\nvim
 }
 
 scoop import $DOTFILES/pkgs/scoop.json

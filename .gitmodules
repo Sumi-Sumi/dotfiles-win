@@ -1,3 +1,6 @@
-[submodule ".config/from_nixos"]
-    path = ".config/from_nixos"
-	url = https://github.com/Sumi-Sumi/nixos-config
+[submodule ".config/from_nixos/desktop"]
+	path = .config/from_nixos/desktop
+	url = https://github.com/misumisumi/nixos-desktop-config.git
+[submodule ".config/from_nixos/common"]
+	path = .config/from_nixos/common
+	url = https://github.com/misumisumi/nixos-common-config.git
