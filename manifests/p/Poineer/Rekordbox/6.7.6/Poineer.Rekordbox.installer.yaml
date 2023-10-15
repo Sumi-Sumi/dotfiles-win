@@ -1,0 +1,15 @@
+# Created using wingetcreate 1.5.3.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.5.0.schema.json
+
+PackageIdentifier: Poineer.Rekordbox
+PackageVersion: 6.7.6
+InstallerType: zip
+NestedInstallerType: nullsoft
+NestedInstallerFiles:
+- RelativeFilePath: Install_rekordbox_x64_6_7_6.exe
+Installers:
+- Architecture: x64
+  InstallerUrl: https://cdn.rekordbox.com/files/20230920152835/Install_rekordbox_x64_6_7_6.zip
+  InstallerSha256: 3509AD1B700C7F5E8C6FE349B2CAD8D87E8F3ED90B2F61F38ED9E28BF2DD0613
+ManifestType: installer
+ManifestVersion: 1.5.0
