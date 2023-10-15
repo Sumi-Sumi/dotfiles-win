@@ -73,7 +73,7 @@ foreach ($disableFeature in $disableFeatures) {
 }
 # local manifestからwingetできるようにする
 winget settings --enable LocalManifestFiles
-winget import --ignore-unavailable --accept-source-agreements --accept-package-agreements $DOTFILES\pkgs\winget.json
+winget import --ignore-unavailable --ignore--security-hash --accept-source-agreements --accept-package-agreements $DOTFILES\pkgs\winget.json
 
 # profile
 # New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.profile.ps1 -Value $DOTCONFIG\powershell\profile.ps1

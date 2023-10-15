@@ -193,8 +193,8 @@ $Action = New-ScheduledTaskAction -Execute "komorebi -a"
 Register-ScheduledTask -TaskName "Launch komorebi" -Action $Action -Trigger $Trigger
 
 # install from local manifest
-winget install -m ../manifests/k/Kushview/Element/0.46.6/
 winget install -m ../manifests/f/FacebookTechnologies,LLC/OculusSetup/1.76.0.0
+winget install -m ../manifests/p/Poineer/Rekordbox/6.7.6
 
 # $GOPACKAGES = @(
 #   "golang.org/x/tools/cmd/goimports"
