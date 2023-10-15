@@ -1,37 +1,25 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2023-03-23T11:27:07.308-00:00",
+	"CreationDate" : "2023-10-15T15:22:37.473-00:00",
 	"Sources" : 
 	[
 		{
 			"Packages" : 
 			[
 				{
-					"PackageIdentifier" : "9P6T8HXSG978"
-				}
-			],
-			"SourceDetails" : 
-			{
-				"Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
-				"Identifier" : "StoreEdgeFD",
-				"Name" : "msstore",
-				"Type" : "Microsoft.Rest"
-			}
-		},
-		{
-			"Packages" : 
-			[
-				{
-					"PackageIdentifier" : "File-New-Project.EarTrumpet"
+					"PackageIdentifier" : "Microsoft.VisualStudio.2022.Community"
 				},
 				{
 					"PackageIdentifier" : "MichaelTippach.ASIO4ALL"
 				},
 				{
-					"PackageIdentifier" : "Lexikos.AutoHotkey"
+					"PackageIdentifier" : "Discord.Discord"
 				},
 				{
-					"PackageIdentifier" : "Discord.Discord"
+					"PackageIdentifier" : "GIMP.GIMP"
+				},
+				{
+					"PackageIdentifier" : "Git.Git"
 				},
 				{
 					"PackageIdentifier" : "KDE.Krita"
@@ -41,6 +29,9 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.EdgeWebView2Runtime"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WingetCreate"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.WindowsTerminal"
@@ -64,22 +55,16 @@
 					"PackageIdentifier" : "Unity.Unity.2020"
 				},
 				{
+					"PackageIdentifier" : "Unity.Unity.2020"
+				},
+				{
 					"PackageIdentifier" : "Unity.UnityHub"
-				},
-				{
-					"PackageIdentifier" : "VB-Audio.Voicemeeter.Banana"
-				},
-				{
-					"PackageIdentifier" : "VivaldiTechnologies.Vivaldi"
 				},
 				{
 					"PackageIdentifier" : "Zoom.Zoom"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VisualStudio.2022.Community"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
+					"PackageIdentifier" : "Element.Element"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
@@ -88,40 +73,97 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
 				},
 				{
-					"PackageIdentifier" : "Nextcloud.NextcloudDesktop"
-				},
-				{
-					"PackageIdentifier" : "VirtualDesktop.Streamer"
-				},
-				{
-					"PackageIdentifier" : "nathancorvussolis.corvusskk"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
 				},
 				{
 					"PackageIdentifier" : "BlenderFoundation.Blender"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerToys"
+					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.19041"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
 				},
 				{
-					"PackageIdentifier" : "NewTek.NDI5Runtime"
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
+				},
+				{
+					"PackageIdentifier" : "NDI.NDI5Runtime"
+				},
+				{
+					"PackageIdentifier" : "Python.Launcher"
+				},
+				{
+					"PackageIdentifier" : "BlenderFoundation.Blender"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
 				},
 				{
 					"PackageIdentifier" : "SomePythonThings.WingetUIStore"
 				},
 				{
+					"PackageIdentifier" : "VirtualDesktop.Streamer"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
+				},
+				{
+					"PackageIdentifier" : "VRChat.CreatorCompanion"
+				},
+				{
+					"PackageIdentifier" : "BlenderFoundation.Blender"
+				},
+				{
+					"PackageIdentifier" : "BlenderFoundation.Blender"
+				},
+				{
+					"PackageIdentifier" : "Nvidia.GeForceExperience"
+				},
+				{
+					"PackageIdentifier" : "Nvidia.RTXVoice"
+				},
+				{
 					"PackageIdentifier" : "wez.wezterm"
+				},
+				{
+					"PackageIdentifier" : "univrsal.scrab"
+				},
+				{
+					"PackageIdentifier" : "Nextcloud.NextcloudDesktop"
+				},
+				{
+					"PackageIdentifier" : "BlenderFoundation.Blender"
+				},
+				{
+					"PackageIdentifier" : "SlackTechnologies.Slack"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
 				},
 				{
 					"PackageIdentifier" : "LGUG2Z.komorebi"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
+					"PackageIdentifier" : "nathancorvussolis.corvusskk"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2013.x64"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsSDK.10.0.22000"
+				},
+				{
+					"PackageIdentifier" : "GaijinNetwork.WarThunder"
 				}
 			],
 			"SourceDetails" : 
@@ -131,7 +173,28 @@
 				"Name" : "winget",
 				"Type" : "Microsoft.PreIndexed.Package"
 			}
+		},
+		{
+			"Packages" : 
+			[
+				{
+					"PackageIdentifier" : "9MVZQVXJBQ9V"
+				},
+				{
+					"PackageIdentifier" : "9N95Q1ZZPMH4"
+				},
+				{
+					"PackageIdentifier" : "XPDCFJDKLZJLP8"
+				}
+			],
+			"SourceDetails" : 
+			{
+				"Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+				"Identifier" : "StoreEdgeFD",
+				"Name" : "msstore",
+				"Type" : "Microsoft.Rest"
+			}
 		}
 	],
-	"WinGetVersion" : "1.5.441-preview"
+	"WinGetVersion" : "1.7.2782-preview"
 }
