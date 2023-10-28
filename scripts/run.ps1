@@ -1,3 +1,8 @@
+Param(
+  [switch]$with_wsl,
+  [switch]$with_komorebi
+)
+
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 # DO NOT RUN ON ISE
 # Set-ExecutionPolicy -Scope Process Unrestricted
@@ -137,7 +142,7 @@ $DATE = Get-Date -Format "yyyy-MM-dd"
 ssh-keygen -t ed25519 -C "$env:username@$env:computername-$DATE" -P "" -f $env:userprofile\.ssh\id_ed25519
 
 # runas
-Start-Process powershell.exe ("-NoProfile -Command cd " + $env:USERPROFILE + "\.dotfiles\scripts; .\run_admin.ps1") -Verb runas
+Start-Process powershell.exe ("-NoProfile -Command cd " + $env:USERPROFILE + "\.dotfiles\scripts; .\run_admin.ps1 -with_wsl " + $with_wsl) -Verb runas
 
 $env:PIPX_BIN_DIR = "$env:USERPROFILE\bin"
 $env:PYTHONUSERBASE = "$env:USERPROFILE"
@@ -188,9 +193,11 @@ $env:GOPATH = $env:USERPROFILE
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 
 # add task scheduler
-$Trigger = New-ScheduledTaskTrigger -AtStartup
-$Action = New-ScheduledTaskAction -Execute "komorebi -a"
-Register-ScheduledTask -TaskName "Launch komorebi" -Action $Action -Trigger $Trigger
+If($with_komorebi){
+  $Trigger = New-ScheduledTaskTrigger -AtStartup
+  $Action = New-ScheduledTaskAction -Execute "komorebi -a"
+  Register-ScheduledTask -TaskName "Launch komorebi" -Action $Action -Trigger $Trigger
+}
 
 # install from local manifest
 winget install -m ../manifests/f/FacebookTechnologies,LLC/OculusSetup/1.76.0.0

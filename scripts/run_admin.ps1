@@ -1,3 +1,8 @@
+Param(
+  [Bool]$with_wsl = $false,
+  [Bool]$with_komorebi = $false
+)
+
 fsutil 8dot3name set 1
 $DOTFILES = "$env:USERPROFILE\.dotfiles"
 $DOTCONFIG = "$DOTFILES\.config"
@@ -73,7 +78,14 @@ foreach ($disableFeature in $disableFeatures) {
 }
 # local manifestからwingetできるようにする
 winget settings --enable LocalManifestFiles
-winget import --ignore-unavailable --ignore--security-hash --accept-source-agreements --accept-package-agreements $DOTFILES\pkgs\winget.json
+winget import -i $DOTFILES\pkgs\winget.json --ignore-unavailable --accept-source-agreements --accept-package-agreements --disable-interactivity
+
+$FONTS = @(
+  "nerd-fonts"
+  "udevgothic-nf"
+)
+
+scoop install $FONTS
 
 # profile
 # New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.profile.ps1 -Value $DOTCONFIG\powershell\profile.ps1
@@ -96,8 +108,11 @@ New-Item -Force -ItemType SymbolicLink -Path $env:LOCALAPPDATA\nvim -Value $DOTF
 # editorconfig
 New-Item -Force -ItemType SymbolicLink -Path $env:USERPROFILE\.editorconfig -Value $DOTFILES\.config\nvim\.editorconfig
 
-wsl --update
-wsl --shutdown
+If($with_wsl){
+  wsl --install -d ubuntu
+  wsl --update
+  wsl --shutdown
+}
 
 # Powershell modules
 Install-Module -Force -Scope CurrentUser syntax-highlighting
